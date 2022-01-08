@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+#Activate Rewrite
+RewriteEngine on
+ErrorDocument 404 http://localhost/learning/project_2/error/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+</IfModule>
